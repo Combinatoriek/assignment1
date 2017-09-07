@@ -20,6 +20,11 @@
 	\setcounter{enumi}{3} \item %d
 	$\dfrac{3}{4}$ of all natural numbers are not divisible by 4. There are $\lceil \dfrac{3 * 899}{4} \rceil = 675$ numbers in the range $[100, 899]$ which are not divisible by 4.
 	\setcounter{enumi}{6} \item %g
+	Every $3^{rd}$ number is divisible by 3. There are $\lfloor 899 / 3 \rfloor = 299$ numbers divisible by 3 in the range $[100, 899]$.
+
+	Since we do not want to count the numbers divisible by 4 as well, we subtract the numbers which are divisible by $lcm(3, 4) = 12$. There are $\lfloor 899 / 12 \rfloor = 74$ numbers divisible by 12 in the range $[100, 899]$.
+
+	The final answer are all numbers divisible by 3, without the numbers divisible by 4 as well: $299 - 74 = 225$.
 \end{enumerate}
 
 \section*{10}
