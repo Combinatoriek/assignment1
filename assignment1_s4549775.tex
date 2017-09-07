@@ -4,6 +4,7 @@
 \usepackage{enumerate}
 \usepackage[margin=5em]{geometry}
 \usepackage{multicol}
+\usepackage{tikz}
 
 \setlength\parskip{1em}
 \setlength\parindent{0em}
@@ -83,6 +84,30 @@ We write $\dfrac{n!}{(n - k)!}$ as $n p k$, and $\dfrac{n!}{k!(n - k)!}$ as $n c
 \end{enumerate}
 
 \section*{12}
+We can show this by providing an example. If we represent each person as a node, and the relations of the persons to each other as edges in the graph, we can rephrase the question as: Can we find a coloring for a fully connected 5-node graph using 2 colors, such that for each color there is no cycle of length 3.
+
+\begin{tikzpicture}[
+	c/.style={circle, draw, minimum width=2em}
+]
+	\node[c] (A) at (0, 1.5) {1};
+	\node[c] (B) at (2, 0) {2};
+	\node[c] (C) at (1, -2) {3};
+	\node[c] (D) at (-1, -2) {4};
+	\node[c] (E) at (-2, 0) {5};
+
+	\draw[dashed] (A) -- (B);
+	\draw (A) -- (C);
+	\draw (A) -- (D);
+	\draw[dashed] (A) -- (E);
+	\draw[dashed] (B) -- (C);
+	\draw (B) -- (D);
+	\draw (B) -- (E);
+	\draw[dashed] (C) -- (D);
+	\draw (C) -- (E);
+	\draw[dashed] (D) -- (E);
+\end{tikzpicture}
+
+This example shows that we can construct such a graph.
 
 \section*{13}
 \begin{enumerate}[a]
